@@ -1,13 +1,13 @@
 {
   "homepage": "https://creator-angelika.github.io/portfolio/",
   "name": "r3f-vite-starter",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "preview": "vite preview"
   },
