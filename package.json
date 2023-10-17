@@ -1,10 +1,13 @@
 {
+  "homepage": "https://creator-angelika.github.io/portfolio/",
   "name": "r3f-vite-starter",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -b main -d build",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -20,6 +23,7 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",
+    "gh-pages": "^6.0.0",
     "vite": "^4.1.0"
   }
 }

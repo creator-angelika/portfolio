@@ -6,7 +6,7 @@ export const Experience = () => {
   return (
     <>
       <OrbitControls />
-      <ambientLight intensity={1} />
+      <ambientLight intensity={0.8} />
       <Office />
     </>
   );
