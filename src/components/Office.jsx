@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import { useGLTF, useTexture } from '@react-three/drei';
 import * as THREE from "three";
 
-
 export function Office(props) {
   const { nodes, materials } = useGLTF('models/room.gltf');
   const sofa = useTexture("textures/bakum.jpg");
