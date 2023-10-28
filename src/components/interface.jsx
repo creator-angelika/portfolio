@@ -65,29 +65,11 @@ const AboutSection = (props) => {
                         delay: 1.5,
                     }
                 }}
-                className="text-lg text-gray-600 mt-4 font-extrabold"> Creative Developer | 3d Artist
+                className="text-lg text-gray-600 mt-4 font-extrabold"> ✨Creative Developer | 3d Artist
                 <br />
                 📍Bhopal, India
             </motion.p>
             <div style={{ display: "flex", justifyContent: "space-between", gap: "20px" }}>
-                <motion.button
-                    onClick={() => setSection(3)}
-                    initial={{
-                        opacity: 0,
-                        y: 25,
-                    }}
-                    whileInView={{
-                        opacity: 1,
-                        y: 0,
-                        transition: {
-                            duration: 1,
-                            delay: 2,
-                        },
-                    }}
-                    className={`bg-blue-400 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16`}
-                >
-                    Contact Me
-                </motion.button>
                 <motion.button
                     onClick={() => window.open("src/assets/Janta_Sahayak.pdf")}
                     initial={{
@@ -107,10 +89,6 @@ const AboutSection = (props) => {
                     Download Resume
                 </motion.button>
             </div>
-            {/* <div>
-      <h1>Your Awesome Resume</h1>
-      <DownloadButton />
-    </div> */}
         </Section>
     )
 }
@@ -280,7 +258,7 @@ const ProjectsSection = () => {
 const ContactSection = () => {
     return (
         <Section>
-  <div className="text-white mt-80 ">
+  <div className="text-white mt-80 mb-20">
     <div className="container p-4 flex justify-between items-center mt-60">
       <div className="left-side">
         <div>
@@ -292,16 +270,12 @@ const ContactSection = () => {
             and let's bring your ideas to life.
           </p>
         </div>
-        <button className="w-1/2 bg-blue-500 text-white px-4 py-2 rounded-md mb-20">
+        <button className="w-1/2 bg-blue-500 text-white px-4 py-2 rounded-md">
           Shoot An Email
         </button>
       </div>
-      <div className="right-side flex flex-col items-center gap-8 text-center mb-4">
-        <p className="w-1/2 text-xl text-black">
-          Ready to turn your creative vision into reality? Send me an email,
-          and let's bring your ideas to life.
-        </p>
-        <div className="flex gap-8">
+      <div className="right-side flex flex-col items-center gap-8 text-center mt-20">
+      <div className="flex gap-8">
           <a href="https://www.github.com" target="_blank" className="text-white hover:text-blue-400">
             <FontAwesomeIcon icon={faLinkedin} size="2x" style={{ color: "#223658" }} />
           </a>
@@ -312,6 +286,10 @@ const ContactSection = () => {
             <FontAwesomeIcon icon={faSquareBehance} size="2x" style={{ color: "#223658" }} />
           </a>
         </div>
+        <p className="w-full text-sm text-black">
+        &copy; 2023 Angelika Thomas. All rights reserved.
+        </p>
+        
       </div>
     </div>
   </div>
