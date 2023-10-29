@@ -8,6 +8,7 @@ import { ScrollManager } from "./components/ScrollManager";
 import { framerMotionConfig } from "./config";
 import { MotionConfig } from "framer-motion";
 import { Leva } from "leva";
+import { Analytics } from '@vercel/analytics/react';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           ...framerMotionConfig,
         }}
       >
+      
       <Canvas shadows camera={{ position: [0, 2, 8], fov:42 }}>
         <color attach="background" args={["#fdf2f8"]} />
         <ScrollControls pages={4} damping={0.1}>
@@ -33,7 +35,7 @@ function App() {
           <Experience section={section}/>
           </Scroll>
           <Scroll html>
-            <Interface />
+          <Interface setSection={setSection} />
           </Scroll>
          
         </ScrollControls>
@@ -41,6 +43,7 @@ function App() {
       <Menu onSectionChange={setSection} menuOpened={menuOpened} setMenuOpened={setMenuOpened}/>
       </MotionConfig>
       <Leva hidden />
+      <Analytics />
     </>
   );
 }
