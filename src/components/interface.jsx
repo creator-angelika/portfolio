@@ -5,12 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub, faSquareBehance } from "@fortawesome/free-brands-svg-icons";
 
 const Section = (props) => {
-    const { children } = props;
+    const { children, mobileTop } = props;
 
     return (
         <motion.section className={`
     h-screen w-screen p-20 max-w-screen-2xl mx-auto
-    flex flex-col items-start justify-center
+    flex flex-col items-start
+    ${mobileTop ? "justify-start md:justify-center" : "justify-center"}
     `}
             initial={{
                 opacity: 0,
@@ -43,11 +44,17 @@ export const Interface = (props) => {
     );
 };
 
+const Line = () => {
+    return (
+        <hr className="w-full h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-700" />
+    );
+};
+
 const AboutSection = (props) => {
     const { setSection } = props;
     return (
-        <Section>
-            <h1 className="text-6xl font-extrabold leading-snug">
+        <Section mobileTop>
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-snug mt-8 md:mt-0">
                 Hi, I'm
                 <br />
                 <p className="text-blue-400 px-1 italic">Angelika Thomas</p>
@@ -65,7 +72,7 @@ const AboutSection = (props) => {
                         delay: 1.5,
                     }
                 }}
-                className="text-lg text-gray-600 mt-4 font-extrabold"> ✨Creative Developer | 3d Artist
+                className="text-sm md:text-lg text-gray-600 mt-4 font-extrabold"> ✨Creative Developer | 3d Artist
                 <br />
                 📍Bhopal, India
             </motion.p>
@@ -84,7 +91,7 @@ const AboutSection = (props) => {
                             delay: 2,
                         },
                     }}
-                    className={`bg-blue-400 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16`}
+                    className={`bg-blue-400 text-white py-3 md:py-4 px-4 md:px-8 rounded-lg font-bold text-sm md:text-lg mt-4 md:mt-16`}
                 >
                     Download Resume
                 </motion.button>
@@ -134,92 +141,102 @@ const languages = [
 
 const SkillSection = () => {
     return (
-
-        <Section >
-            <div className="my-10 ml-auto">
-                <h2 className="text-5xl font-bold ">Skills</h2>
+        <Section>
+            <motion.div className="w-full md:w-auto md:px-10 md:ml-auto" whileInView={"visible"}>
+                <h2 className="text-3xl md:text-5xl font-bold text-black">Skills</h2>
                 <div className="mt-8 space-y-4">
                     {skills.map((skill, index) => (
-                        <div className="w-64 h-12" key={index} >
-                            <motion.h3 className="text-xl font-bold text-gray-800"
+                        <div className="w-full md:w-64" key={index}>
+                            <motion.h3
+                                className="text-lg md:text-xl font-bold text-gray-800"
                                 initial={{
                                     opacity: 0,
-                                    y: 50,
                                 }}
-                                whileInView={{
-                                    opacity: 1,
-                                    y: 0,
-                                    transition: {
-                                        duration: 1,
-                                        delay: 1 + index * 0.2,
-                                    }
+                                variants={{
+                                    visible: {
+                                        opacity: 1,
+                                        transition: {
+                                            duration: 1,
+                                            delay: 1 + index * 0.2,
+                                        },
+                                    },
                                 }}
-                            >{skill.title}</motion.h3>
-                            <div className="h-2 w-full bg-gray-300 rounded-full mt-2">
-                                <motion.div className="h-full bg-blue-500 rounded full"
-                                    initial={{
-                                        scaleX: 0,
-                                        originX: 0,
-                                    }}
-                                    whileInView={{
-                                        scaleX: 1,
-                                    }}
-                                    transition={{
-                                        duration: 1,
-                                        delay: 1 + index * 0.2,
-                                    }}
+                            >
+                                {skill.title}
+                            </motion.h3>
+                            <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
+                                <motion.div
+                                    className="h-full bg-indigo-500 rounded-full "
                                     style={{ width: `${skill.level}%` }}
-                                />
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-            <div className="ml-auto">
-                <h2 className="text-5xl font-bold">Languages</h2>
-                <div className="mt-8 space-y-4">
-                    {languages.map((lng, index) => (
-                        <div className="w-64" key={index} >
-                            <motion.h3 className="text-xl font-bold text-gray-800"
-                                initial={{
-                                    opacity: 0,
-                                    y: 50,
-                                }}
-                                whileInView={{
-                                    opacity: 1,
-                                    y: 0,
-                                    transition: {
-                                        duration: 1,
-                                        delay: 1 + index * 0.2,
-                                    }
-                                }}
-                            >{lng.title}</motion.h3>
-                            <div className="h-2 w-full bg-gray-300 rounded-full mt-2">
-                                <motion.div className="h-full bg-blue-500 rounded full"
                                     initial={{
                                         scaleX: 0,
                                         originX: 0,
                                     }}
-                                    whileInView={{
-                                        scaleX: 1,
+                                    variants={{
+                                        visible: {
+                                            scaleX: 1,
+                                            transition: {
+                                                duration: 1,
+                                                delay: 1 + index * 0.2,
+                                            },
+                                        },
                                     }}
-                                    transition={{
-                                        duration: 1,
-                                        delay: 1 + index * 0.2,
-                                    }}
-                                    style={{ width: `${lng.level}%` }}
                                 />
                             </div>
                         </div>
                     ))}
                 </div>
-            </div>
+                <div>
+                    <h2 className="text-3xl md:text-5xl font-bold mt-10 text-black">
+                        Languages
+                    </h2>
+                    <div className="mt-8 space-y-4">
+                        {languages.map((lng, index) => (
+                            <div className="w-full md:w-64" key={index}>
+                                <motion.h3
+                                    className="text-lg md:text-xl font-bold text-gray-800"
+                                    initial={{
+                                        opacity: 0,
+                                    }}
+                                    variants={{
+                                        visible: {
+                                            opacity: 1,
+                                            transition: {
+                                                duration: 1,
+                                                delay: 2 + index * 0.2,
+                                            },
+                                        },
+                                    }}
+                                >
+                                    {lng.title}
+                                </motion.h3>
+                                <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
+                                    <motion.div
+                                        className="h-full bg-indigo-500 rounded-full "
+                                        style={{ width: `${lng.level}%` }}
+                                        initial={{
+                                            scaleX: 0,
+                                            originX: 0,
+                                        }}
+                                        variants={{
+                                            visible: {
+                                                scaleX: 1,
+                                                transition: {
+                                                    duration: 1,
+                                                    delay: 2 + index * 0.2,
+                                                },
+                                            },
+                                        }}
+                                    />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </motion.div>
         </Section>
-    )
-}
-
-
-
+    );
+};
 
 
 const ProjectsSection = () => {
@@ -233,18 +250,20 @@ const ProjectsSection = () => {
         setCurrentProject((currentProject - 1 + projects.length) % projects.length);
     };
 
+
+
     return (
         <Section>
-            <div className="flex w-full h-full gap-80 items-center justify-center">
+            <div className="mt-0 flex w-full h-full gap-6 md:gap-12 items-center justify-center ">
                 <button
-                    className="hover:text-indigo-600 transition-colors mt-80 font-bold"
+                    className="hover:text-indigo-600 transition-colors"
                     onClick={previousProject}
                 >
                     ← Previous
                 </button>
-                <h2 className="text-5xl font-bold mt-0 ">Projects</h2>
+                <h2 className="text-3xl md:text-5xl font-bold">Projects</h2>
                 <button
-                    className="hover:text-blue-600 transition-colors mt-80 font-bold"
+                    className="mt-1 hover:text-indigo-600 transition-colors"
                     onClick={nextProject}
                 >
                     Next →
@@ -258,42 +277,41 @@ const ProjectsSection = () => {
 const ContactSection = () => {
     return (
         <Section>
-  <div className="text-white mt-80 mb-20">
-    <div className="container p-4 flex justify-between items-center mt-60">
-      <div className="left-side">
-        <div>
-          <h2 className="text-4xl font-bold mb-8 text-gray-800">
-            Start A Conversation
-          </h2>
-          <p className="w-1/2 text-xl text-black mb-8">
-            Ready to turn your creative vision into reality? Send me an email,
-            and let's bring your ideas to life.
-          </p>
-        </div>
-        <button className="w-1/2 bg-blue-500 text-white px-4 py-2 rounded-md">
-          Shoot An Email
-        </button>
-      </div>
-      <div className="right-side flex flex-col items-center gap-8 text-center mt-20">
-      <div className="flex gap-8">
-          <a href="https://www.github.com" target="_blank" className="text-white hover:text-blue-400">
-            <FontAwesomeIcon icon={faLinkedin} size="2x" style={{ color: "#223658" }} />
-          </a>
-          <a href="https://www.github.com" target="_blank" className="text-white hover:text-blue-400">
-            <FontAwesomeIcon icon={faGithub} size="2x" style={{ color: "#223658" }} />
-          </a>
-          <a href="https://www.behance.net" target="_blank" className="text-white hover:text-blue-400">
-            <FontAwesomeIcon icon={faSquareBehance} size="2x" style={{ color: "#223658" }} />
-          </a>
-        </div>
-        <p className="w-full text-sm text-black">
-        &copy; 2023 Angelika Thomas. All rights reserved.
-        </p>
-        
-      </div>
-    </div>
-  </div>
-</Section>
+            <Line />
+            <div className="text-white mt-0 container p-4 flex flex-col md:flex-row md:justify-between md:items-center">
+                <div className="left-side mb-5 md:mb-0">
+                    <div>
+                        <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-8 text-gray-800">
+                            Start A Conversation
+                        </h2>
+                        <p className="w-full md:w-1/2 text-sm md:text-xl text-black mb-4 md:mb-8">
+                            Ready to turn your creative vision into reality? Send me an email,
+                            and let's bring your ideas to life.
+                        </p>
+                    </div>
+                    <button className="w-full md:w-1/2 md:w-auto bg-blue-500 text-white px-4 py-2 rounded-md">
+                        Shoot An Email
+                    </button>
+                </div>
+                <div className="right-side flex flex-col items-center gap-8 text-center mt-10 md:mt-0">
+                    <div className="flex gap-20 md:gap-8">
+                        <a href="https://www.github.com" target="_blank" className="text-white hover:text-blue-400">
+                            <FontAwesomeIcon icon={faLinkedin} size="2x" style={{ color: "#223658" }} />
+                        </a>
+                        <a href="https://www.github.com" target="_blank" className="text-white hover:text-blue-400">
+                            <FontAwesomeIcon icon={faGithub} size="2x" style={{ color: "#223658" }} />
+                        </a>
+                        <a href="https://www.behance.net" target="_blank" className="text-white hover:text-blue-400">
+                            <FontAwesomeIcon icon={faSquareBehance} size="2x" style={{ color: "#223658" }} />
+                        </a>
+                    </div>
+                    <p className="w-full text-xs md:text-sm text-black">
+                        &copy; 2023 Angelika Thomas. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </Section>
+
 
     )
 }
