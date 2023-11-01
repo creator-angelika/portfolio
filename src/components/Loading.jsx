@@ -27,9 +27,9 @@ export const Loading = (props) => {
             width: `${progress}%`,
           }}
         >
-          Angelika Thomas
+          Loading
         </div>
-        <div className="opacity-40">Angelika Thomas</div>
+        <div className="opacity-40">Loading</div>
       </div>
     </div>
   );
