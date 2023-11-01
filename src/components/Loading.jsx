@@ -29,7 +29,7 @@ export const Loading = (props) => {
         >
           Angelika Thomas
         </div>
-        <div className="opacity-40">Wawa Sensei</div>
+        <div className="opacity-40">Angelika Thomas</div>
       </div>
     </div>
   );
