@@ -4,6 +4,7 @@ import { Office } from "./Office";
 import { Projects } from "./Projects";
 import { MyLoader } from "./MLoader";
 import { useThree } from "@react-three/fiber";
+import { Background } from "./Background";
 
 export const Experience = (props) => {
   const { section } = props;
@@ -17,7 +18,8 @@ export const Experience = (props) => {
 
   return (
     <>
-      <ambientLight intensity={2} />
+      <ambientLight intensity={3} />
+      <Background />
       <motion.group
         position={[
           isMobile ? 0 : 1.5 * officeScaleRatio,

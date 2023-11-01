@@ -54,10 +54,10 @@ const AboutSection = (props) => {
     const { setSection } = props;
     return (
         <Section mobileTop>
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-snug mt-8 md:mt-0">
+            <h1 className="text-white text-4xl md:text-6xl font-extrabold leading-snug mt-8 md:mt-0">
                 Hi, I'm
                 <br />
-                <p className="text-blue-400 px-1 italic">Angelika Thomas</p>
+                <p className="text-sky-400 px-1 italic">Angelika Thomas</p>
             </h1>
             <motion.p
                 initial={{

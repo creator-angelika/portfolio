@@ -9,10 +9,12 @@ import { framerMotionConfig } from "./config";
 import { MotionConfig } from "framer-motion";
 import { Leva } from "leva";
 import { Analytics } from '@vercel/analytics/react';
+import { Loading } from "./components/Loading";
 
 
 function App() {
   const[section, setSection]= useState(0);
+  const[started, setStarted] = useState(false);
   const [menuOpened, setMenuOpened] = useState(false);
 
   useEffect(() => {
@@ -21,6 +23,7 @@ function App() {
 
   return (
     <>
+      <Loading started={started} setStarted={setStarted}/>
       <MotionConfig
         transition={{
           ...framerMotionConfig,
