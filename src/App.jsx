@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { Experience } from "./components/Experience";
 import { Scroll, ScrollControls, useScroll } from "@react-three/drei";
 import { Interface } from "./components/interface";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Menu } from "./components/Menu";
 import { ScrollManager } from "./components/ScrollManager";
 import { framerMotionConfig } from "./config";
@@ -35,10 +35,12 @@ function App() {
         <ScrollControls pages={3.8} damping={0.1}>
           <ScrollManager section={section} onSectionChange={setSection} />
           <Scroll>
+            <Suspense>
           <Experience section={section}/>
+          </Suspense>
           </Scroll>
           <Scroll html>
-          <Interface setSection={setSection} />
+          {started && <Interface setSection={setSection} />}
           </Scroll>
          
         </ScrollControls>
