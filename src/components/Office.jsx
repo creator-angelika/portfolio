@@ -10,6 +10,18 @@ export function Office(props) {
   })
   sofa.flipY=false;
 
+  const speaker = useTexture("textures/speaker.jpg");
+  const speakerMaterial = new THREE.MeshStandardMaterial({
+    map: speaker,
+  })
+  speaker.flipY=false;
+
+  const speaker2 = useTexture("textures/speaker2.jpg");
+  const speaker2Material = new THREE.MeshStandardMaterial({
+    map: speaker2,
+  })
+  speaker2.flipY=false;
+
   const table = useTexture("textures/table.jpg");
   const tableMaterial = new THREE.MeshStandardMaterial({
     map: table,
@@ -34,17 +46,7 @@ export function Office(props) {
   })
   plane2.flipY=false;
 
-  const speaker = useTexture("textures/speaker.jpg");
-  const speakerMaterial = new THREE.MeshStandardMaterial({
-    map: speaker,
-  })
-  speaker.flipY=false;
 
-  const speaker2 = useTexture("textures/speaker2.jpg");
-  const speaker2Material = new THREE.MeshStandardMaterial({
-    map: speaker2,
-  })
-  speaker2.flipY=false;
 
   const chair = useTexture("textures/chair.jpg");
   const chairMaterial = new THREE.MeshStandardMaterial({

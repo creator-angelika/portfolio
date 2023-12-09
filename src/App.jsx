@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { Experience } from "./components/Experience";
 import { Scroll, ScrollControls, useScroll } from "@react-three/drei";
-import { Interface } from "./components/interface";
+import { Interface } from "./components/Interface";
 import { Suspense, useEffect, useState } from "react";
 import { Menu } from "./components/Menu";
 import { ScrollManager } from "./components/ScrollManager";
@@ -32,19 +32,21 @@ function App() {
       
       <Canvas shadows camera={{ position: [0, 2, 8], fov:42 }}>
         <color attach="background" args={["#fdf2f8"]} />
-        <ScrollControls pages={3.8} damping={0.1}>
-          <ScrollManager section={section} onSectionChange={setSection} />
-          <Scroll>
-          <Experience section={section}/>
-          
-          </Scroll>
-          <Scroll html>
-          {started && <Interface setSection={setSection} />}
-          </Scroll>
-         
-        </ScrollControls>
-      </Canvas>
-      <Menu onSectionChange={setSection} menuOpened={menuOpened} setMenuOpened={setMenuOpened}/>
+        <ScrollControls pages={3} damping={0.1}>
+        <ScrollManager section={section} onSectionChange={setSection} />
+            <Scroll>
+              <Experience section={section} menuOpened={menuOpened} />
+            </Scroll>
+            <Scroll html>
+              <Interface setSection={setSection} />
+            </Scroll>
+          </ScrollControls>
+        </Canvas>
+        <Menu
+          onSectionChange={setSection}
+          menuOpened={menuOpened}
+          setMenuOpened={setMenuOpened}
+        />
       </MotionConfig>
       <Leva hidden />
       <Analytics />

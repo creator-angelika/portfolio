@@ -1,7 +1,7 @@
 import { useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap/gsap-core";
+import { gsap } from "gsap";
 
 export const ScrollManager = (props) => {
     const {section, onSectionChange} = props;
@@ -25,24 +25,33 @@ export const ScrollManager = (props) => {
     })
    }, [section]);
 
-    useFrame(() => {
-        if(isAnimating.current){
-            lastScroll.current = data.scroll.current;
-            return;
-        }
-
-        const curSection = Math.floor(data.scroll.current * data.pages);
-        if(data.scroll.current > lastScroll.current && curSection === 0){
-            onSectionChange(1);
-        }
-
-        if (
-            data.scroll.current < lastScroll.current && 
-            data.scroll.current < 1 / (data.pages - 1)
-        ) {
-            onSectionChange(0);
-        }
+   useFrame(() => {
+    if (isAnimating.current) {
         lastScroll.current = data.scroll.current;
-    })
+        return;
+    }
+
+    const curSection = Math.floor(data.scroll.current * data.pages);
+    const prevSection = Math.floor(lastScroll.current * data.pages);
+
+    if (data.scroll.current > lastScroll.current) {
+        if (curSection > prevSection) {
+            onSectionChange((prevSection + 1) % data.pages);
+        } else if (curSection < prevSection) {
+            onSectionChange((curSection + 1) % data.pages);
+        }
+    } else if (data.scroll.current < lastScroll.current) {
+        if (curSection < prevSection) {
+            onSectionChange((prevSection - 1 + data.pages) % data.pages);
+        } else if (curSection > prevSection) {
+            onSectionChange((curSection - 1 + data.pages) % data.pages);
+        }
+    }
+
+    lastScroll.current = data.scroll.current;
+});
+
+
+        
     return null;
 };

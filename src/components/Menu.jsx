@@ -4,7 +4,7 @@ export const Menu = (props) => {
         <>
         <button 
         onClick={() => setMenuOpened(!menuOpened)}
-        className="z-20 fixed top-6 right-6 md:top-12 md:right-12 p-3 bg-blue-600 w-11 h-11 rounded-md">
+        className="z-20 fixed top-6 right-6 md:top-12 md:right-12 p-3 bg-pink-400 w-11 h-11 rounded-md">
             <div className={`bg-white h-0.5 rounded-md w-full transition-all ${
                 menuOpened ? "rotate-45 translate-y-0.5" : ""
             }`}
@@ -26,7 +26,6 @@ export const Menu = (props) => {
                 <MenuButton label = "About" onClick={() => onSectionChange(0) } />
                 <MenuButton label = "Skills" onClick={() => onSectionChange(1) } />
                 <MenuButton label = "Projects" onClick={() => onSectionChange(2) } />
-                <MenuButton label = "Contact" onClick={() => onSectionChange(3) } />  
             </div>
         </div>
         </>
@@ -37,7 +36,7 @@ const MenuButton = (props) => {
     const {label, onClick} = props;
     return (
         <button onClick={onClick}
-        className="text-2xl font-bold cursor-pointer hover:text-indigo-600 transition-colors">
+        className="text-2xl font-bold cursor-pointer hover:text-pink-300 transition-colors">
             {label}
         </button>
     )
