@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { Experience } from "./components/Experience";
 import { Scroll, ScrollControls, useScroll } from "@react-three/drei";
-import { Interface } from "./components/Interface";
+import { Interface } from "./components/interface";
 import { Suspense, useEffect, useState } from "react";
 import { Menu } from "./components/Menu";
 import { ScrollManager } from "./components/ScrollManager";
