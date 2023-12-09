@@ -113,6 +113,10 @@ const skills = [
         level: 85,
     },
     {
+        title: "Github/ GIT",
+        level: 80,
+    },
+    {
         title: "Machine Learning",
         level: 80,
     },
