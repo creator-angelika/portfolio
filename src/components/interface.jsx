@@ -6,6 +6,7 @@ import {
     faSquareBehance,
     faInstagram,
     faGoogle,
+    faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 
 
@@ -53,10 +54,10 @@ const AboutSection = (props) => {
     const { setSection } = props;
     return (
         <Section mobileTop>
-            <h1 className="text-white text-4xl md:text-6xl font-extrabold leading-snug mt-8 md:mt-0 ">
+            <h1 className="text-white text-3xl md:text-6xl font-extrabold leading-snug mt-8 md:mt-2 ">
                 Hi, I'm
                 <br />
-                <p className="text-sky-400 px-1 italic">Angelika Thomas</p>
+                <p className="text-sky-400 px-1 italic">Insert Name</p>
             </h1>
             <motion.p
                 initial={{
@@ -71,9 +72,9 @@ const AboutSection = (props) => {
                         delay: 1.5,
                     }
                 }}
-                className="text-sm md:text-lg text-gray-100 mt-8 font-bold"> ✨Creative Developer | 3d Artist
+                className="text-sm md:text-lg text-gray-100 mt-8 font-bold"> ✨Professional Gamer || Vlogger
                 <br />
-                📍Bhopal, India
+                📍India
             </motion.p>
             <div style={{ display: "flex", justifyContent: "space-between", gap: "20px" }}>
                 <motion.button
@@ -92,7 +93,7 @@ const AboutSection = (props) => {
                     }}
                     className={`bg-blue-400 text-white py-3 md:py-4 px-4 md:px-8 rounded-lg font-bold text-sm md:text-lg mt-4 md:mt-16`}
                 >
-                    View Resume
+                    Buy Merch
                 </motion.button>
             </div>
         </Section>
@@ -101,29 +102,22 @@ const AboutSection = (props) => {
 
 const skills = [
     {
-        title: "Product Designing",
+        title: "BGMI",
         level: 95,
     },
     {
-        title: "Blender 3D",
-        level: 90,
-    },
-    {
-        title: "React JS",
-        level: 85,
-    },
-    {
-        title: "Github/ GIT",
+        title: "Valorant",
         level: 80,
     },
     {
-        title: "Machine Learning",
-        level: 80,
+        title: "GTA V",
+        level: 75,
     },
     {
-        title: "Artificial Intelligence",
-        level: 80,
+        title: "Minecraft",
+        level: 50,
     },
+    
 
 ]
 
@@ -146,8 +140,8 @@ const SkillSection = () => {
     return (
         <Section>
             <motion.div className="w-full md:w-auto md:px-10 md:ml-auto" whileInView={"visible"}>
-                <h2 className="text-3xl md:text-5xl font-bold text-black">Skills</h2>
-                <div className="mt-8 space-y-4">
+                <h2 className="text-3xl md:text-5xl font-bold text-black">Games I Play: </h2>
+                <div className="mt-12 space-y-10">
                     {skills.map((skill, index) => (
                         <div className="w-full md:w-64" key={index}>
                             <motion.h3
@@ -189,53 +183,7 @@ const SkillSection = () => {
                         </div>
                     ))}
                 </div>
-                <div>
-                    <h2 className="text-3xl md:text-5xl font-bold mt-10 text-black">
-                        Languages
-                    </h2>
-                    <div className="mt-8 space-y-4">
-                        {languages.map((lng, index) => (
-                            <div className="w-full md:w-64" key={index}>
-                                <motion.h3
-                                    className="text-lg md:text-xl font-bold text-gray-800"
-                                    initial={{
-                                        opacity: 0,
-                                    }}
-                                    variants={{
-                                        visible: {
-                                            opacity: 1,
-                                            transition: {
-                                                duration: 1,
-                                                delay: 2 + index * 0.2,
-                                            },
-                                        },
-                                    }}
-                                >
-                                    {lng.title}
-                                </motion.h3>
-                                <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
-                                    <motion.div
-                                        className="h-full bg-pink-400 rounded-full "
-                                        style={{ width: `${lng.level}%` }}
-                                        initial={{
-                                            scaleX: 0,
-                                            originX: 0,
-                                        }}
-                                        variants={{
-                                            visible: {
-                                                scaleX: 1,
-                                                transition: {
-                                                    duration: 1,
-                                                    delay: 2 + index * 0.2,
-                                                },
-                                            },
-                                        }}
-                                    />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                
             </motion.div>
         </Section>
     );
@@ -249,28 +197,10 @@ const ProjectsSection = (props) => {
             <div className="flex flex-col items-center md:items-start justify-center md:justify-start h-3/5 md:h-1/3 mb-auto md:mt-auto ">
                 <div className="flex flex-row md:flex-col gap-12 md:gap-12">
                     <div className="flex items-center gap-4">
-                        <a href="https://www.linkedin.com/in/angelika-thomas-56029022b/" target="_blank" rel="noopener noreferrer">
-                            <FontAwesomeIcon icon={faLinkedin} size="2x" />
-                        </a>
-                        <p className="hidden md:block text-lg md:text-xl font-bold text-gray-800">Angelika Thomas</p>
-                    </div>
-                    <div className="flex items-center gap-4">
-                        <a href="https://github.com/creator-angelika" target="_blank" rel="noopener noreferrer">
-                            <FontAwesomeIcon icon={faGithub} size="2x" />
-                        </a>
-                        <p className="hidden md:block text-lg md:text-xl font-bold text-gray-800">creator-angelika</p>
-                    </div>
-                    <div className="flex items-center gap-4">
-                        <a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer">
-                            <FontAwesomeIcon icon={faSquareBehance} size="2x" />
-                        </a>
-                        <p className="hidden md:block text-lg md:text-xl font-bold text-gray-800">Behance</p>
-                    </div>
-                    <div className="flex items-center gap-4">
                         <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faInstagram} size="2x" />
                         </a>
-                        <p className="hidden md:block text-lg md:text-xl font-bold text-gray-800">bevel.3d</p>
+                        <p className="hidden md:block text-lg md:text-xl font-bold text-gray-800">Instagram</p>
                     </div>
                     <div className="flex items-center gap-4">
                         <a href="mailto:angelikathomas26@gmail.com" target="_blank" rel="noopener noreferrer">
@@ -278,6 +208,14 @@ const ProjectsSection = (props) => {
                         </a>
                         <p className="hidden md:block text-lg md:text-xl font-bold text-gray-800">Gmail</p>
                     </div>
+                    <div className="flex items-center gap-4">
+                        <a href="https://www.linkedin.com/in/angelika-thomas-56029022b/" target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon icon={faYoutube} size="2x" />
+                        </a>
+                        <p className="hidden md:block text-lg md:text-xl font-bold text-gray-800">Youtube</p>
+                    </div>
+                    
+                    
                 </div>
             </div>
             <p className="absolute bottom-0 text-xs md:text-sm text-gray-200 mb-4 text-center w-full left-1/2 transform -translate-x-1/2">
@@ -289,4 +227,5 @@ const ProjectsSection = (props) => {
     );
 };
 
+export default Interface;
 
