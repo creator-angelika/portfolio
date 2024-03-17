@@ -21,7 +21,7 @@ export function Office(props) {
   })
   
 
-  const Table = useTexture("textures/Table.jpg");
+  const Table = useTexture("textures/tablee.jpg");
   Table.flipY=false;
   Table.encoding= THREE.sRGBEncoding;
   const TableMaterial = new THREE.MeshStandardMaterial({
