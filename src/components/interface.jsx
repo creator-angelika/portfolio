@@ -217,7 +217,7 @@ const ProjectsSection = (props) => {
                     
                 </div>
             </div>
-            <p className="absolute bottom-0 text-xs md:text-sm text-gray-200 mb-4 text-center w-full left-1/2 transform -translate-x-1/2">
+            <p className="absolute bottom-0 text-xs md:text-sm text-gray-500 mb-4 text-center w-full left-1/2 transform -translate-x-1/2">
                 &copy; 2023 Angelika Thomas. All rights reserved.
             </p>
         </section>
