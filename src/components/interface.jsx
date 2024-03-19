@@ -78,7 +78,6 @@ const AboutSection = (props) => {
             </motion.p>
             <div style={{ display: "flex", justifyContent: "space-between", gap: "20px" }}>
                 <motion.button
-                    onClick={() => window.open("src/assets/AngelikaThomasResume.pdf")}
                     initial={{
                         opacity: 0,
                         y: 25,
