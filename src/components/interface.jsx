@@ -202,13 +202,13 @@ const ProjectsSection = (props) => {
                         <p className="hidden md:block text-lg md:text-xl font-bold text-gray-800">Instagram</p>
                     </div>
                     <div className="flex items-center gap-4">
-                        <a href="www.gmail.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faGoogle} size="2x" />
                         </a>
                         <p className="hidden md:block text-lg md:text-xl font-bold text-gray-800">Gmail</p>
                     </div>
                     <div className="flex items-center gap-4">
-                        <a href="www.youtube.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faYoutube} size="2x" />
                         </a>
                         <p className="hidden md:block text-lg md:text-xl font-bold text-gray-800">Youtube</p>
