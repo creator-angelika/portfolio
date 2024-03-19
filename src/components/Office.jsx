@@ -6,7 +6,7 @@ export function Office(props) {
   const { nodes, materials } = useGLTF('models/gamingroom.glb');
   
   
-  const sofa = useTexture("textures/sofa.jpg");
+  const sofa = useTexture("textures/Sofa.jpg");
   sofa.flipY=false;
   sofa.encoding = THREE.sRGBEncoding;
   const sofaMaterial = new THREE.MeshStandardMaterial({
@@ -14,7 +14,7 @@ export function Office(props) {
   })
   
 
-  const GamingChair = useTexture("textures/gamingchair.jpg");
+  const GamingChair = useTexture("textures/GamingChair.jpg");
   GamingChair.flipY=false;
   const GamingChairMaterial = new THREE.MeshStandardMaterial({
     map: GamingChair,
@@ -29,7 +29,7 @@ export function Office(props) {
   })
   
 
-  const RingLight = useTexture("textures/ringlight.jpg");
+  const RingLight = useTexture("textures/RingLight.jpg");
   RingLight.flipY=false;
   RingLight.encoding=THREE.sRGBEncoding;
   const RingLightMaterial = new THREE.MeshStandardMaterial({
@@ -69,7 +69,7 @@ export function Office(props) {
   })
   
 
-  const MousePad = useTexture("textures/mousepad.jpg");
+  const MousePad = useTexture("textures/MousePad.jpg");
   MousePad.flipY=false;
   MousePad.encoding = THREE.sRGBEncoding;
   const MousePadMaterial = new THREE.MeshStandardMaterial({
@@ -77,7 +77,7 @@ export function Office(props) {
   })
   
 
-  const Floor = useTexture("textures/floor.jpg");
+  const Floor = useTexture("textures/Floor.jpg");
   Floor.flipY=false;
   Floor.encoding = THREE.sRGBEncoding;
   const FloorMaterial = new THREE.MeshStandardMaterial({
@@ -164,7 +164,7 @@ export function Office(props) {
   })
   
 
-  const D1 = useTexture("textures/d1.jpg");
+  const D1 = useTexture("textures/D1.jpg");
   D1.flipY=false;
   D1.encoding=THREE.sRGBEncoding;
   const D1Material = new THREE.MeshStandardMaterial({
@@ -172,7 +172,7 @@ export function Office(props) {
   })
   
 
-  const D1screen = useTexture("textures/d1screen.jpg");
+  const D1screen = useTexture("textures/D1screen.jpg");
   D1screen.flipY=false;
   D1screen.encoding = THREE.sRGBEncoding;
   const D1screenMaterial = new THREE.MeshStandardMaterial({
@@ -188,7 +188,7 @@ export function Office(props) {
   })
   
 
-  const D2screen = useTexture("textures/d2screen.jpg");
+  const D2screen = useTexture("textures/D2screen.jpg");
   D2screen.flipY=false;
   D2screen.encoding=THREE.sRGBEncoding;
   const D2screenMaterial = new THREE.MeshStandardMaterial({
@@ -204,7 +204,7 @@ export function Office(props) {
   })
   
 
-  const D3screen = useTexture("textures/d3screen.jpg");
+  const D3screen = useTexture("textures/D3screen.jpg");
   D3screen.flipY=false;
   D3screen.encoding=THREE.sRGBEncoding;
   const D3screenMaterial = new THREE.MeshStandardMaterial({
@@ -212,7 +212,7 @@ export function Office(props) {
   })
   
   
-  const TVscreen = useTexture("textures/tvscreen.jpg");
+  const TVscreen = useTexture("textures/TVscreen.jpg");
   TVscreen.flipY=false;
   TVscreen.encoding=THREE.sRGBEncoding;
   const TVscreenMaterial = new THREE.MeshStandardMaterial({
@@ -220,7 +220,7 @@ export function Office(props) {
   })
   
 
-  const TV = useTexture("textures/tv.jpg");
+  const TV = useTexture("textures/TV.jpg");
   TV.flipY=false;
   TV.encoding=THREE.sRGBEncoding;
   const TVMaterial = new THREE.MeshStandardMaterial({
