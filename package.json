@@ -23,6 +23,7 @@
     "@react-three/fiber": "8.13.3",
     "@types/three": "0.152.1",
     "@vercel/analytics": "^1.1.1",
+    "@vercel/speed-insights": "^1.0.10",
     "framer-motion": "^10.16.4",
     "framer-motion-3d": "^10.16.4",
     "gsap": "^3.12.2",

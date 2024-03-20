@@ -9,6 +9,7 @@ import { framerMotionConfig } from "./config";
 import { MotionConfig } from "framer-motion";
 import { Leva } from "leva";
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Loading } from "./components/Loading";
 
 
@@ -49,6 +50,7 @@ function App() {
         />
       </MotionConfig>
       <Leva hidden />
+      <SpeedInsights/>
       <Analytics />
     </>
   );
