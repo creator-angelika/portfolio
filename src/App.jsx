@@ -50,7 +50,6 @@ function App() {
         />
       </MotionConfig>
       <Leva hidden />
-      <SpeedInsights/>
       <Analytics />
     </>
   );
