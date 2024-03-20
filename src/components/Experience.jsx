@@ -30,9 +30,9 @@ export const Experience = (props) => {
         
         animate={{
           x: isMobile ? (section === 0 ? -0.2 : section === 0 ? undefined : section === 2 ? -0.2 : undefined) : (section === 0 ? 2 : section === 1 ? -1.5 : section === 2 ? 1 : undefined),
-          z: isMobile ? (section === 0 ? 1 : section === 1 ? undefined : section === 2 ?1 : undefined) : (section === 0 ? 0 : section === 1 ? 1 : section === 2 ? 1 : undefined),
+          z: isMobile ? (section === 0 ? 1 : section === 1 ? undefined : section === 2 ? 1 : undefined) : (section === 0 ? 0 : section === 1 ? 1 : section === 2 ? 1 : undefined),
           y: isMobile ? (section === 0 ? -1.5 : section === 1 ? undefined : section === 2 ? -13.5 : undefined) : (section === 0 ? -1 : section === 1 ? -7 : section === 2 ? -13.5 : undefined),
-          rotateY: isMobile ? (section === 0 ? -Math.PI / 4 : section === 1 ? undefined : section === 2 ? -Math.PI / 2.4 : undefined) : (section === 0 ?-Math.PI / 2.5 : section === 1 ?-Math.PI / 8 : section === 2 ? -Math.PI / 2 : undefined),
+          rotateY: isMobile ? (section === 0 ? -Math.PI / 4 : section === 1 ? undefined : section === 2 ? -Math.PI / 2.1 : undefined) : (section === 0 ?-Math.PI / 2.5 : section === 1 ?-Math.PI / 8 : section === 2 ? -Math.PI / 2 : undefined),
           rotateZ: isMobile ? (section === 0 ? 0 : section === 1 ? undefined : section === 2 ? -0 : undefined) : (section === 0 ? 0 : section === 1 ? -0.03 : section === 2 ? 0 : undefined),
         }}
       >
